@@ -5,8 +5,10 @@ from bs4 import BeautifulSoup
 github_user = '*****'
 github_pw = '*****'
 
-base_codeplex_url = 'https://thali.codeplex.com/workitem'
-base_github_url = 'https://api.github.com/repos/judell/thali_issues/issues'
+base_codeplex_url = 'https://REPO.codeplex.com/workitem'
+codeplex_issue_count = 100
+base_github_url = 'https://api.github.com/repos/USER/REPO/issues'
+
 
 def TransferCodeplexIssue(issue_num):
 
@@ -90,7 +92,7 @@ def GetDescription(soup):
 def Strip(s):
     return s.replace('\r','').replace('\n','').strip()
 
-for i in range(63):
+for i in range(codeplex_issue_count):
   print 'issue ' + str(i+1)
   try:
     TransferCodeplexIssue(i+1)
